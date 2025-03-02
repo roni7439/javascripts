@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .qr_code_gen {
+            background-color: #fff;
+            width: 400px;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .qr_code_gen p {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #qr_input_text {
+            width: 100%;
+            height: 30px;
+            border: 2px dashed black;
+            padding-left: 5px;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        #qr_btn {
+            width: 100%;
+            height: 40px;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #qr_btn:active {
+            background-color: yellow;
+            color: black;
+        }
+        #qr_img {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        #qr_img img {
+            width: 150px;
+            height: 150px;
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="qr_code_gen">
+        <p>QR Code Generator</p>
+        <input id="qr_input_text" placeholder="Enter Your URL or Text">
+        <div id="qr_img">
+            <img src="" id="qr_code">
+        </div>
+        <button id="qr_btn">Generate</button>
+    </div>
+
+    <script>
+        let qr_code=document.getElementById('qr_code')
+       const btn=document.getElementById('qr_btn')
+        let qr_img=document.getElementById("qr_img")
+        function create_img()
+        {
+            const text=document.getElementById("qr_input_text").value
+            if(text==="")
+                {
+                  alert("Please Enter Valid Text")
+                  return
+                }
+            qr_code.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(text)}`
+            qr_img.style.display="block";
+        }
+        btn.addEventListener("click",create_img)
+    </script>
+
+</body>
+</html>

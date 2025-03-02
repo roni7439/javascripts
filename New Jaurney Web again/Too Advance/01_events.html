@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photo1"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="photo2"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="photo3"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="photo4"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+                
+        </ul>
+        <a id="link" href="https://github.com/hiteshchoudhary/js-hindi-youtube/blob/main/08_events/one.html">google</a>
+    </div>
+</body>
+<script>
+
+        document.querySelector("#images").addEventListener("click",function(event){
+            console.log(event)
+            alert(`The Photo clicked`)
+        },false)
+        const owl=document.getElementById('photo4')
+        owl.addEventListener("click",function(event){
+            alert(`The owl clicked`)
+            //to avoid propagation
+            event.stopPropagation()
+        },false)
+
+        document.getElementById('link').addEventListener("click",function(e){
+            e.preventDefault()
+            console.log("Link is Clicked");
+            
+        })
+     
+
+    // now removed the photo where we clicked
+    // document.getElementById("images").addEventListener("click", function (event) {
+    //     const TagName = event.target.tagName;
+    //     if (TagName === 'IMG') {
+    //         event.target.parentNode.remove()
+    //         console.log(event.target.id);           
+    //     }
+    // })
+
+</script>
+
+</html>

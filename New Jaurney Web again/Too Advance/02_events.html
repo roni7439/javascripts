@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScripts</h1>
+    <button id="stop">Stop</button>
+   
+</body>
+<script>
+//    const timeout= setTimeout(function(){
+//         console.log("Washim Molla"); 
+//         document.querySelector('.pa').innerHTML="Washim Molla"
+//     },2000)
+
+//    setTimeout(function(){
+//     
+//    })
+
+const change=function()
+{
+    document.querySelector('h1').innerHTML="The Best Java-Scripts Series"
+}
+const change_me= setTimeout(change,3000)
+
+document.querySelector('#stop').addEventListener("click",function(event){
+    clearTimeout(change_me),
+    console.log("Stopped");   
+})
+
+
+</script>
+</html>

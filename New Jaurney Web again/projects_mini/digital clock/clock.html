@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <title>Your Local Time</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+
+        .center {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #clock {
+            font-size: 40px;
+            background-color: red;
+            padding: 20px 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        #stop{
+            margin-top: 12px;
+            padding: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+        #stop2{
+            margin-top: 12px;
+            padding: 15px;
+            font-size: 25px;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="center">
+        <div id="banner"><span>Your local time:</span></div>
+        <div id="clock"></div>
+
+        <button id="stop">Stop Time</button>
+        <button id="stop2">Start Time</button>
+    </div>  
+</body>
+<script>
+    const time=document.querySelector('#clock')
+
+    function start_clock()
+    { 
+        time.innerHTML = new Date().toLocaleTimeString()
+    }
+
+
+    const time_local=setInterval(start_clock, 1000)
+
+    const button_stop=document.querySelector('#stop')
+    const button_start=document.querySelector("#stop2")
+
+    button_stop.addEventListener("click",function(event){
+        button_stop.innerHTML="Time Stoped"
+        clearInterval(time_local)
+        button_start="Start Time"
+        time_local=null
+    })
+    button_start.addEventListener("click",function(event){
+        button_stop.innerHTML="Stop Time"
+        button_start.innerHTML="Time Running"
+        setInterval(start_clock,1000)
+    })
+
+    
+</script>
+
+</html>

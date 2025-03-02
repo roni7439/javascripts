@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Page 2</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parant">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">ThurusDay</div>
+        <div class="day">FriDay</div>
+    </div>
+</body>
+<script>
+   const parant=document.querySelector('.parant')
+   
+   console.log(parant);
+   /*
+   console.log(parant.children);
+   console.log(parant.children[2]);  
+   console.log(parant.children[2].innerHTML);
+   
+   */
+   for(let i=0;i<parant.children.length;i++)
+   {
+    console.log(parant.children[i].innerHTML);
+    
+   }
+/*
+   parant.children[1].style.color="red"
+   const day_one=document.querySelector('.day')
+   console.log(day_one);
+   console.log(day_one.nextElementSibling);
+   
+   */
+
+
+</script>
+</html>
