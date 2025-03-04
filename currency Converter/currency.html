@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="currency.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <form>
+            <div class="amount">
+                <p>Enter amount</p>
+                <input id="text" value="100" type="text">
+            </div>
+            <div class="dropdown">
+                <div class="form">
+                    <p>from</p>
+                    <div class="select_container">
+                        <img src="">
+                        <select name="from">
+                            <!-- <option value="INR">INR</option>
+                            <option value="USDT">USDT</option>
+                            <option value="EUR">EUR</option>
+                            <option value="AUD">AUR</option> -->
+                        </select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-right-left"></i>
+                <div class="To">
+                    <p>To</p>
+                    <div class="select_container">
+                        <img src="">
+                        <select name="to">
+                            <!-- <option value="INR">INR</option>
+                            <option value="USDT" selected>USDT</option>
+                            <option value="EUR">EUR</option>
+                            <option value="AUD">AUR</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <p id="rate"></p>
+            <div class="msg"></div>
+            <button id="btn">Get Exchange</button>
+        </form>
+    </div>
+    <script src="currency.js"></script>
+    <!-- <script src="country.js"></script> -->
+</body>
+
+</html>
